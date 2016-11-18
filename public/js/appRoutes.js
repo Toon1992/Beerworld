@@ -6,8 +6,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             templateUrl: 'views/home.html',
             controller: 'MainController'
         })
-        // nerds page that will use the NerdController
-        .when('/nerds', {
+        .when('/beer', {
             templateUrl: 'views/beer.html',
             controller: 'BeerController'
         });

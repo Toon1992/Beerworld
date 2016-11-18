@@ -1,5 +1,5 @@
-angular.module('MainCtrl', []).controller('MainController', function($scope) {
+var app = angular.module('MainCtrl', []);
 
-    $scope.tagline = 'To the moon and back!';
-
-});
+app.controller('MainController',['$scope', 'beer', function($scope, beer) {
+    $scope.beers = beer;
+}]);

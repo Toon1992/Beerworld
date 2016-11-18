@@ -1,1 +1,1 @@
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'BeerCtrl', 'BeerService']);
+angular.module('beerWorld', ['ngRoute', 'appRoutes', 'MainCtrl', 'BeerCtrl', 'BeerService']);

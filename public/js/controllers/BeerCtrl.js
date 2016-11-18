@@ -1,4 +1,4 @@
-angular.module('NerdCtrl', []).controller('NerdController', function($scope) {
+angular.module('BeerCtrl', []).controller('BeerController', function($scope) {
 
     $scope.tagline = 'Nothing beats a pocket protector!';
 

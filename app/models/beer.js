@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 // define our nerd model
 // module.exports allows us to pass this to other files when it is called
 module.exports = mongoose.model('Beer', {
-    name : {type : String, default: ''},
+    name : String,
     brewery : String,
     percentage: Number,
     image: String,
@@ -12,10 +12,10 @@ module.exports = mongoose.model('Beer', {
     hop: String,
     color: String,
     rating: Number,
-    description:String,
-    reviews:[{
-      reviewName: String,
-      reviewRating: String,
-      reviewText: String
-    }]
+    description:String
+    // reviews:[{
+    //   reviewName: String,
+    //   reviewRating: String,
+    //   reviewText: String
+    // }]
 });
