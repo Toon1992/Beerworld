@@ -1,4 +1,4 @@
-var app = angular.module('BeerService', []);
+var app = angular.module('BeerService', ['ui.router']);
 
 app.factory('beer', ['$http', function($http){
   var o = {
@@ -6,7 +6,17 @@ app.factory('beer', ['$http', function($http){
       name : "Duvel",
       brewery : "Moortgat",
       percentage: 8.9,
-      image: "Duvel",
+      image: "http://www.duvelmoortgat.be/sites/default/files/duvel_packshot.png",
+      taste: "blabla",
+      hop: "blabla",
+      color: "Blond",
+      rating: "8",
+      description:"Lekker lekker lekker"
+    },{
+      name : "Duvel",
+      brewery : "Moortgat",
+      percentage: 8.9,
+      image: "http://www.duvelmoortgat.be/sites/default/files/duvel_packshot.png",
       taste: "blabla",
       hop: "blabla",
       color: "Blond",

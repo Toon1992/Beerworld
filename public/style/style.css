@@ -1,0 +1,38 @@
+.beerView{
+  border: 1px solid grey;
+  margin-bottom: 2%;
+  padding: 3%;
+}
+
+.beerView b{
+  font-size: 1.5em;
+}
+
+.beerView:hover{
+  background-color: #b2b2b2;
+}
+
+.beerView a, .beerView a:hover{
+  color:black;
+  text-decoration: none;
+}
+
+img{
+  height:100px;
+}
+
+p{
+  margin-left: 5%;
+}
+
+.beerViewer img{
+  height: 200px;
+}
+
+.beerViewer{
+  margin-bottom: 10%;
+}
+
+h1{
+  margin-bottom: 5%;
+}

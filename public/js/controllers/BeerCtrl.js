@@ -1,5 +1,7 @@
-angular.module('BeerCtrl', []).controller('BeerController', function($scope) {
+var app = angular.module('BeerCtrl', ['ui.router']);
 
-    $scope.tagline = 'Nothing beats a pocket protector!';
-
-});
+app.controller('BeerController',['$scope', '$stateParams', 'beer',
+  function($scope, $stateParams, beer) {
+    $scope.beer = beer.beers[$stateParams.id];
+    //$scope.tagline = 'Nothing beats a pocket protector!';
+}]);

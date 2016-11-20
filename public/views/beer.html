@@ -1,4 +1,25 @@
-<div class="jumbotron text-center">
-    <h1>BEEER</h1>
-    <p>{{ tagline }}</p>
+<div class="container">
+  <div class="col-lg-12 col-md-12">
+    <div class="beerViewer">
+      <div class="col-lg-3 col-md-3">
+        <img src="{{beer.image}}" />
+      </div>
+      <div class="col-lg-9 col-md-9">
+        <h2>{{beer.name}}</h2>
+        <span>{{beer.brewery}}</span>
+        <h3>Description:</h3>
+        <p>{{beer.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="col-lg-12 col-md-12">
+    <div class="reviews">
+      <div class="col-lg-3 col-md-3">
+        <h2>Reviews</h2>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
