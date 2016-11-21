@@ -11,7 +11,18 @@ app.factory('beer', ['$http', function($http){
       hop: "blabla",
       color: "Blond",
       rating: "8",
-      description:"Lekker lekker lekker"
+      description:"Lekker lekker lekker",
+      reviews:[{
+        name:"Toon",
+        rating:"9",
+        subject:"Awesome beer",
+        description:"Wat een geweldig biertje is me dit"
+      },{
+        name:"Hannes",
+        rating:"5",
+        subject:"Slecht dag gehad na een duvel",
+        description:"gans de dag moeten kotsen van dit bier"
+      }]
     },{
       name : "Duvel",
       brewery : "Moortgat",
