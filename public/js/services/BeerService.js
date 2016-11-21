@@ -26,7 +26,7 @@ app.factory('beer', ['$http', function($http){
   };
 
   return o;
-}])
+}]);
 
 
 // // angular.module('BeerWorld', []).factory('BeerService', ['$http', function($http) {
