@@ -1,39 +1,44 @@
 var app = angular.module('BeerService', ['ui.router']);
 
 app.factory('beer', ['$http', function($http){
-  var o = {
-    beers:[{
-      name : "Duvel",
-      brewery : "Moortgat",
-      percentage: 8.9,
-      image: "http://www.duvelmoortgat.be/sites/default/files/duvel_packshot.png",
-      taste: "blabla",
-      hop: "blabla",
-      color: "Blond",
-      rating: "8",
-      description:"Lekker lekker lekker",
-      reviews:[{
-        name:"Toon",
-        rating:"9",
-        subject:"Awesome beer",
-        description:"Wat een geweldig biertje is me dit"
-      },{
-        name:"Hannes",
-        rating:"5",
-        subject:"Slecht dag gehad na een duvel",
-        description:"gans de dag moeten kotsen van dit bier"
-      }]
-    },{
-      name : "Duvel",
-      brewery : "Moortgat",
-      percentage: 8.9,
-      image: "http://www.duvelmoortgat.be/sites/default/files/duvel_packshot.png",
-      taste: "blabla",
-      hop: "blabla",
-      color: "Blond",
-      rating: "8",
-      description:"Lekker lekker lekker"
-    }]
+  var o = {beers:[]};
+    // beers:[{
+    //   name : "Duvel",
+    //   brewery : "Moortgat",
+    //   percentage: 8.9,
+    //   image: "http://www.duvelmoortgat.be/sites/default/files/duvel_packshot.png",
+    //   taste: "blabla",
+    //   hop: "blabla",
+    //   color: "Blond",
+    //   rating: "8",
+    //   description:"Lekker lekker lekker",
+    //   reviews:[{
+    //     name:"Toon",
+    //     rating:"9",
+    //     subject:"Awesome beer",
+    //     description:"Wat een geweldig biertje is me dit"
+    //   },{
+    //     name:"Hannes",
+    //     rating:"5",
+    //     subject:"Slecht dag gehad na een duvel",
+    //     description:"gans de dag moeten kotsen van dit bier"
+    //   }]
+    // },{
+    //   name : "Duvel",
+    //   brewery : "Moortgat",
+    //   percentage: 8.9,
+    //   image: "http://www.duvelmoortgat.be/sites/default/files/duvel_packshot.png",
+    //   taste: "blabla",
+    //   hop: "blabla",
+    //   color: "Blond",
+    //   rating: "8",
+    //   description:"Lekker lekker lekker"
+    // }]
+  //};
+  o.getAll = function(){
+    return $http.get('/beers').then(function(data){
+      return data.data;
+    });
   };
 
   return o;
