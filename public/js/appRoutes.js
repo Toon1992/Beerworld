@@ -18,7 +18,12 @@ angular.module('appRoutes', ['ui.router']).config(['$stateProvider', '$urlRouter
         .state('beers', {
             url: '/beer/{id}',
             templateUrl: 'views/beer.html',
-            controller: 'BeerController'
+            controller: 'BeerController',
+            resolve:{
+              chosenBeer: ['$stateParams', 'beer', function($stateParams, beer){
+                return beer.get($stateParams.id);
+              }]
+            }
         });
 
   $urlRouterProvider.otherwise("/home");

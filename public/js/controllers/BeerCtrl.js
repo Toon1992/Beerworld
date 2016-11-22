@@ -1,7 +1,7 @@
 var app = angular.module('BeerCtrl', ['ui.router']);
 
-app.controller('BeerController',['$scope', '$stateParams', 'beer',
-  function($scope, $stateParams, beer) {
+app.controller('BeerController',['$scope', 'chosenBeer', 'beer',
+  function($scope, chosenBeer, beer) {
     $scope.data = {
       model:null,
       ratings:[
@@ -18,16 +18,17 @@ app.controller('BeerController',['$scope', '$stateParams', 'beer',
       ]
     };
 
-    var chosenbeer = beer.beers[$stateParams.id];
-    $scope.beer = chosenbeer;
-    $scope.reviews = chosenbeer.reviews;
+    $scope.beer = chosenBeer;
+    $scope.reviews = chosenBeer.reviews;
 
     $scope.addReview = function(){
-      $scope.reviews.push({
-        name:"Hannes",
-        rating:$scope.data.model,
-        subject:$scope.subject,
-        description:$scope.description
+      beer.addReview(chosenBeer._id,{
+          name:"Hannes",
+          rating:$scope.data.model,
+          subject:$scope.subject,
+          description:$scope.description
+      }).success(function(comment){
+        $scope.beer.reviews.push(comment);
       });
       $scope.subject = '';
       $scope.description ='';
