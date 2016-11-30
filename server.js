@@ -6,6 +6,7 @@ var app            = express();
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose       = require('mongoose');
+var passport       = require('passport');
 // configuration ===========================================
 
 // config files
@@ -19,6 +20,8 @@ var port = process.env.PORT || 4200;
 mongoose.connect(db.url);
 require('./app/models/Beers');
 require('./app/models/Reviews');
+require('./app/models/Users');
+require('./config/passport');
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json
@@ -35,6 +38,8 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
+
+app.use(passport.initialize());
 
 // routes ==================================================
 var routes = require('./app/routes');

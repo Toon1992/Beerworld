@@ -1,6 +1,6 @@
 var app = angular.module('BeerService', ['ui.router']);
 
-app.factory('beer', ['$http', function($http){
+app.factory('beer', ['$http', 'auth', function($http, auth){
   var o = {beers:[]};
     o.getAll = function(){
       return $http.get('/beers').then(function(data){
@@ -15,7 +15,9 @@ app.factory('beer', ['$http', function($http){
     }
 
     o.addReview = function(id, review){
-      return $http.post('/beers/' + id + '/reviews', review);
+      return $http.post('/beers/' + id + '/reviews', review, {
+        headers: {Authorization: 'Bearer ' + auth.getToken()}
+      });
     }
 
   return o;

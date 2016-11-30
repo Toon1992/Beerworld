@@ -1,29 +1,23 @@
 <div ng-repeat="beer in beers">
-  <div class="beerView">
-      <a href="#/beer/{{beer._id}}">
-    <div class="row">
-      <div class="col-lg-12 col-md-12">
-        <div class="col-lg-2 col-md-2">
-            <img src="{{beer.image}}"/>
-        </div>
-        <div class="col-lg-10 col-md-10">
-            <div class="col-lg-4 col-md-4">
-              <p>
-                <b>{{beer.name}}</b>      - {{beer.rating}}/10
-              </p>
-            </div>
-          <div class="col-lg-8 col-md-8">
-            <ul>
-              <li>Description: {{beer.description}}</li>
-              <li>Percentage: {{beer.percentage}}%</li>
-              <li>Taste: {{beer.taste}}</li>
-              <li>Hop: {{beer.hop}}</li>
-              <li>color: {{beer.color}}</li>
-            </ul>
-          </div>
-
+    <div class="beerView">
+        <a href="#/beer/{{beer._id}}">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="col-lg-2 col-md-2">
+                        <img src="{{beer.image}}"/>
+                    </div>
+                    <div class=homeBeerView>
+                      <div class="col-lg-2 col-md-2">
+                        <b>{{beer.name}}</b>
+                      </div>
+                      <div class="col-lg-7 col-md-7">
+                          {{beer.description}}
+                      </div>
+                      <div class="col-lg-1 col-md-1">
+                          <b>{{beer.rating}}</b>/10
+                      </div>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
-      </a>
-  </div>
-</div>

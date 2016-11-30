@@ -37,7 +37,7 @@ h1{
 .beerReview{
   margin: 1% 0 1% 2%;
   padding-top: 1%;
-
+  float:left;
 }
 
 .beerReview span{
@@ -54,6 +54,10 @@ h1{
 .reviews, .addReview{
   margin-top: 2%;
   border-top: 2px solid #E8E8E8;
+}
+
+.ratingView{
+  border-left: 1px solid black;
 }
 
 form{
@@ -76,4 +80,8 @@ button{
 
 select{
   margin-bottom: 5%;
+}
+
+.homeBeerView{
+  margin-top: 2%;
 }

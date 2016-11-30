@@ -1,7 +1,7 @@
 var app = angular.module('BeerCtrl', ['ui.router']);
 
-app.controller('BeerController',['$scope', 'chosenBeer', 'beer',
-  function($scope, chosenBeer, beer) {
+app.controller('BeerController',['$scope', 'chosenBeer', 'beer','auth',
+  function($scope, chosenBeer, beer, auth) {
     $scope.data = {
       model:null,
       ratings:[
@@ -20,10 +20,11 @@ app.controller('BeerController',['$scope', 'chosenBeer', 'beer',
 
     $scope.beer = chosenBeer;
     $scope.reviews = chosenBeer.reviews;
+    $scope.isLoggedIn = auth.isLoggedIn;
 
     $scope.addReview = function(){
       beer.addReview(chosenBeer._id,{
-          name:"Hannes",
+          name: auth.currentUser,
           rating:$scope.data.model,
           subject:$scope.subject,
           description:$scope.description
