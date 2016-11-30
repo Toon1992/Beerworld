@@ -24,7 +24,7 @@ app.controller('BeerController',['$scope', 'chosenBeer', 'beer','auth',
 
     $scope.addReview = function(){
       beer.addReview(chosenBeer._id,{
-          name: auth.currentUser,
+          name: auth.currentUser(),
           rating:$scope.data.model,
           subject:$scope.subject,
           description:$scope.description
