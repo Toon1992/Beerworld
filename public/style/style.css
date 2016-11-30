@@ -30,8 +30,7 @@ p{
 }
 
 h1{
-  margin-bottom: 5%;
-  margin-left: 2%;
+  margin-bottom: 1%;
 }
 
 .beerReview{
@@ -83,4 +82,19 @@ select{
 
 .homeBeerView{
   margin-top: 2%;
+}
+
+h2{
+  font-size: 1.5em;
+  /*margin-left: 2%;*/
+  margin-bottom:2%;
+}
+
+.container{
+  background-color: white;
+  height:100vh;
+}
+
+body{
+  background-color: #DCDCDC;
 }

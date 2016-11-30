@@ -24,7 +24,7 @@
                 </br>
                   <span>{{review.rating}}/10</span>
                 </div>
-                <div class="col-lg-8 col-md-8">
+                <div class="col-lg-10 col-md-10">
                   <p>
                     <b>{{review.subject}}</b>
                     </br>
@@ -38,7 +38,7 @@
 </div>
 <div class="container addReview">
   <div class="col-lg-12 col-md-12">
-    <h2>Voeg eigen Review toe</h2>
+    <h2>Voeg eigen Review</h2>
       <form ng-submit="addReview()">
         <div class="form-group">
             <label for="subject">Onderwerp:</label>
@@ -50,7 +50,6 @@
               <option value="">---Kies een rating---</option>
               <option ng-repeat="rating in data.ratings" value="{{rating.id}}">{{rating.name}}</option>
             </select>
-            </br>
             <button type="submit" class="btn btn-secondary">Voeg toe</button>
           </div>
       </form>

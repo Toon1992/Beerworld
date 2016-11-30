@@ -20,6 +20,7 @@
     <script src="js/controllers/BeerCtrl.js"></script>
     <script src="js/controllers/AuthCtrl.js"></script>
     <script src="js/controllers/NavCtrl.js"></script>
+    <script src="js/directive/HeaderDirectiveController.js"></script>
     <script src="js/services/AuthService.js"></script>
     <script src="js/services/BeerService.js"></script>
     <script src="js/appRoutes.js"></script>
@@ -29,6 +30,7 @@
 </head>
 <body ng-app="beerWorld">
 <div class="container">
+  <div class="main">
     <!-- HEADER -->
     <nav class="navbar navbar-inverse" ng-controller="NavController">
       <ul class="nav navbar-nav">
@@ -40,10 +42,13 @@
     </ul>
     </nav>
 
-    <h1>Beerworld!</h1>
+    <div ng-controller="MyHeaderController">
+      <my-header></my-header>
+    </div>
 
     <!-- ANGULAR DYNAMIC CONTENT -->
     <ui-view></ui-view>
+  </div>
 </div>
 </body>
 </html>

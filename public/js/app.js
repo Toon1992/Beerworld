@@ -5,6 +5,7 @@ angular.module('beerWorld', [
   'BeerCtrl',
   'AuthCtrl',
   'NavCtrl',
+  'HeaderDirective',
   'AuthService',
   'BeerService'
       ]);
