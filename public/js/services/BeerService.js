@@ -11,14 +11,14 @@ app.factory('beer', ['$http', 'auth', function($http, auth){
     o.get = function(id){
       return $http.get('/beers/' + id).then(function(res){
         return res.data;
-      })
-    }
+      });
+    };
 
     o.addReview = function(id, review){
       return $http.post('/beers/' + id + '/reviews', review, {
         headers: {Authorization: 'Bearer ' + auth.getToken()}
       });
-    }
+    };
 
   return o;
 }]);

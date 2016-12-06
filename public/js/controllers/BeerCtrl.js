@@ -33,5 +33,5 @@ app.controller('BeerController',['$scope', 'chosenBeer', 'beer','auth',
       });
       $scope.subject = '';
       $scope.description ='';
-    }
+    };
 }]);
