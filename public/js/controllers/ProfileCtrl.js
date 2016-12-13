@@ -36,7 +36,7 @@ app.controller('ProfileController',['$scope', 'auth', 'profile', 'profilePromise
 
     $scope.veranderVoornaam = function(){
         $scope.isVoornaamNull = true;
-    }
+    };
 
     $scope.updateProfile = function(){
       profile.updateProfile({
@@ -48,7 +48,9 @@ app.controller('ProfileController',['$scope', 'auth', 'profile', 'profilePromise
         $scope.voornaam = prof.voornaam;
         $scope.achternaam = prof.achternaam;
         $scope.email = prof.email;
-      })
-    }
+      });
+
+      $scope.isVoornaamNull = false;
+    };
 
   }]);
