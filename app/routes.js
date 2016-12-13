@@ -2,7 +2,8 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Beer = mongoose.model('Beer')
+var Beer = mongoose.model('Beer');
+var Profile = mongoose.model('Profile');
 var Review = mongoose.model('Review');
 var passport = require('passport');
 var User = mongoose.model('User');
@@ -101,6 +102,42 @@ router.post('/login', function(req, res, next){
       return res.status(401).json(info);
     }
   })(req, res, next);
+});
+
+router.get('/profile', function(req, res, next) {
+    Profile.find(function(err, profile) {
+      console.log("ik kom hier");
+        if (err) {
+            return next(err);
+        }
+        res.json(profile); // return all beers in JSON format
+    });
+});
+
+router.param('profile', function(req, res, next, id) {
+    var query = Profile.findById(id);
+
+    query.exec(function(err, beer) {
+        if (err) {
+            return next(err);
+        }
+        if (!profile) {
+            return next(new Error('cant\'t find profile'));
+        }
+
+        req.profile = profile;
+        return next();
+    });
+});
+
+router.post('/profile', function(req, res, next){
+  var profile = new Profile(req.body);
+
+  profile.save(function(err, review) {
+      if (err) {
+          return next(err);
+      }
+  });
 });
 
 

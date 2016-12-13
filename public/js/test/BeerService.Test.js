@@ -39,7 +39,7 @@ describe('Beer factory', function(){
   beforeEach(inject(function(_beer_, _$httpBackend_){
     beers = _beer_;
     $httpBackend = _$httpBackend_;
-    beerRequestHandler = $httpBackend.when('GET', '/beers').respond(200,beerList)
+    beerRequestHandler = $httpBackend.when('GET', '/beers').respond(200,beerList);
   }));
 
   it('should exist', function(){
@@ -50,7 +50,7 @@ describe('Beer factory', function(){
     $httpBackend.expectGET('/beers');
     expect($httpBackend.flush).not.toThrow();
   //  $httpBackend.flush();
-  })
+});
 
 
   // describe('.all()', function(){

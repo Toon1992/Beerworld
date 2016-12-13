@@ -25,6 +25,18 @@ angular.module('appRoutes', ['ui.router']).config(['$stateProvider', '$urlRouter
                     }]
                 }
             })
+            .state('profile', {
+                url: '/profile',
+                templateUrl: 'views/profiel.html',
+                controller: 'ProfileController',
+                resolve:{
+                  profilePromise: ['profile', function(profile) {
+                      return profile.getUser().then(function(data) {
+                          return data;
+                      });
+                  }]
+                }
+            })
             .state('login', {
                 url: '/login',
                 templateUrl: 'views/login.html',

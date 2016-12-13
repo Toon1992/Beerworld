@@ -1,0 +1,54 @@
+<div class="profilePage col-lg-12 col-md-12">
+    <h2>Mijn profiel</h2>
+    <form ng-submit="updateProfile()">
+        <div class="row">
+            <p>
+                <b>Voornaam:</b>
+            </p>
+            <div ng-show="isVoornaamNull" class="form-group">
+                <input type="text" class="form-control" placeholder="Voornaam" ng-model="voornaam"></input>
+            </div>
+            <p ng-hide="isVoornaamNull">
+                <div class="col-lg-3 col-md-3">
+                      {{voornaam}}
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <a href="" ng-click="veranderVoornaam()">Verander voornaam</a>
+                </div>
+            </p>
+        </div>
+        <div class="row">
+            <p>
+                <b>Achternaam:</b>
+            </p>
+            <div ng-show="isAchternaamNull()" class="form-group">
+                <input type="text" class="form-control" placeholder="Achternaam" ng-model="achternaam"></input>
+            </div>
+            <p ng-hide="isAchternaamNull()">
+              <div class="col-lg-3 col-md-3">
+                  {{achternaam}}
+              </div>
+              <div class="col-lg-9 col-md-9">
+                  <a>Verander achternaam</a>
+              </div>
+            </p>
+        </div>
+        <div class="row">
+            <p>
+                <b>Email:</b>
+            </p>
+            <div ng-show="isEmailNull()" class="form-group">
+                <input type="text" class="form-control" placeholder="Email" ng-model="email"></input>
+            </div>
+            <p ng-hide="isEmailNull()">
+              <div class="col-lg-3 col-md-3">
+                    {{email}}
+              </div>
+              <div class="col-lg-9 col-md-9">
+                  <a>Verander email</a>
+              </div>
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Profiel</button>
+    </form>
+</div>

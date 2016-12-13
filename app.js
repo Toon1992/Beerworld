@@ -21,6 +21,7 @@ mongoose.connect(db.url);
 require('./app/models/Beers');
 require('./app/models/Reviews');
 require('./app/models/Users');
+require('./app/models/Profiles');
 require('./config/passport');
 
 // get all data/stuff of the body (POST) parameters
