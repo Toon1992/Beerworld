@@ -49,10 +49,6 @@ h1{
 .even{
   background-color: #E8E8E8;
 }
-.reviews, .addReview{
-  margin-top: 2%;
-  border-top: 2px solid #E8E8E8;
-}
 
 .ratingView{
   border-left: 1px solid black;
